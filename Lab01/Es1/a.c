@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void main(){
+float operando(char* op,float prev);
+int main(){
 
     int fine=0;
     float prev=0;
@@ -17,7 +17,6 @@ void main(){
             fine=1;
         }else{
             scanf("%s %s",op1s,op2s);
-            fflush();
             switch (operatore){
                 case '+':
                     prev= operando(op1s,prev) + operando(op2s,prev);
@@ -35,11 +34,10 @@ void main(){
             }
         }
     }
-
-    return;
+    return 0;
 }
 
 float operando(char* op,float prev){
     if(!strcmp(op,"PREV"))return prev;
-    return (flaot) atof(op);
+    return (float) atof(op);
 }
